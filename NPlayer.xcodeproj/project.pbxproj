@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B5D0A599239DED080080AFE3 /* NPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5D0A597239DED080080AFE3 /* NPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5D0A5A0239DED210080AFE3 /* NPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0A59F239DED210080AFE3 /* NPlayer.swift */; };
+		B5D0A5A2239DED700080AFE3 /* NPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0A5A1239DED700080AFE3 /* NPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B5D0A594239DED080080AFE3 /* NPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D0A597239DED080080AFE3 /* NPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPlayer.h; sourceTree = "<group>"; };
 		B5D0A598239DED080080AFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D0A59F239DED210080AFE3 /* NPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPlayer.swift; sourceTree = "<group>"; };
+		B5D0A5A1239DED700080AFE3 /* NPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				B5D0A597239DED080080AFE3 /* NPlayer.h */,
+				B5D0A59F239DED210080AFE3 /* NPlayer.swift */,
+				B5D0A5A1239DED700080AFE3 /* NPlayerView.swift */,
 				B5D0A598239DED080080AFE3 /* Info.plist */,
 			);
 			path = NPlayer;
@@ -95,6 +101,7 @@
 				TargetAttributes = {
 					B5D0A593239DED080080AFE3 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -131,6 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D0A5A2239DED700080AFE3 /* NPlayerView.swift in Sources */,
+				B5D0A5A0239DED210080AFE3 /* NPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +269,7 @@
 		B5D0A59D239DED080080AFE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 57ZK8687SF;
@@ -276,6 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.taihao.NPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +295,7 @@
 		B5D0A59E239DED080080AFE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 57ZK8687SF;
