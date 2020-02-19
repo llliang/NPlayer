@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NPlayer'
-  s.version          = '0.0.1'
-  s.summary          = '易用的播放器'
+  s.version          = '0.0.2'
+  s.summary          = '千聊的播放器'
   s.swift_version    = "5.0"
 
 
