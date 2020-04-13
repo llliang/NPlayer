@@ -201,18 +201,23 @@ extension NPlayer {
     }
     
     /// 定位到当前多少秒
-    ///
     /// - Parameters:
     ///   - to: 当前秒数
     ///   - completionHander: 完成回调
-    public func seek(to: Double, completionHander: ((Bool) -> ())?) {
+    /// - Returns: 若当前播放item处于非ready状态 返回false
+    @discardableResult
+    public func seek(to: Double, completionHander: ((Bool) -> ())?) -> Bool{
         let time =  CMTime(value: CMTimeValue(to) * 600, timescale: 600)
         let tolerance = CMTime.zero
-        player?.seek(to: time, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: { (completion) in
-            if let handler = completionHander {
-                handler(completion)
-            }
-        })
+        if currentItem?.status == AVPlayerItem.Status.readyToPlay {
+            player?.seek(to: time, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: { (completion) in
+                if let handler = completionHander {
+                    handler(completion)
+                }
+            })
+            return true
+        }
+        return false
     }
 }
 
