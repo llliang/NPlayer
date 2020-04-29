@@ -263,7 +263,7 @@ extension NPlayer {
     private func handlePlayer(status: AVPlayerItem.Status) {
         if status == .failed {
             delegate?.playerBuffer(player: self, status: .failure)
-            delegate?.playerDidPlay(player: self, failed: player?.error)
+            delegate?.playerDidPlay(player: self, failed: currentItem?.error)
         } else if status == .readyToPlay {
             delegate?.playerBuffer(player: self, status: .likelyToKeepUp)
         }

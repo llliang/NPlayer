@@ -19,7 +19,11 @@ public class NPlayerView: UIView {
     public var playerLayer: AVPlayerLayer {
         get {
             let avLayer = self.layer as! AVPlayerLayer
-            avLayer.videoGravity = .resizeAspectFill
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                avLayer.videoGravity = .resizeAspect
+            } else {
+                avLayer.videoGravity = .resizeAspectFill
+            }
             return avLayer
         }
     }
