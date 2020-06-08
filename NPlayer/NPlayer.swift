@@ -263,6 +263,7 @@ extension NPlayer {
     private func handlePlayer(status: AVPlayerItem.Status) {
         if status == .failed {
             delegate?.playerBuffer(player: self, status: .failure)
+            state = .failure
             delegate?.playerDidPlay(player: self, failed: currentItem?.error)
         } else if status == .readyToPlay {
             delegate?.playerBuffer(player: self, status: .likelyToKeepUp)
@@ -379,7 +380,7 @@ private extension NPlayer {
             
             state = .failure
             let reason = notification.userInfo?[AVPlayerItemFailedToPlayToEndTimeErrorKey]
-            delegate?.playerDidPlay(player: self, failed:  reason as? Error ?? nil)
+            delegate?.playerDidPlay(player: self, failed: reason as? Error ?? nil)
         }
     }
 }
